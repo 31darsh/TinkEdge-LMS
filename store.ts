@@ -1,14 +1,14 @@
 
-import { User, Institute, Class, Content, Assessment, Notification } from './types';
+import { User, Institute, Class, Content, Assessment, Notification } from './pages/types';
 
 const INITIAL_USERS: User[] = [
-  { id: '1', name: 'Super Admin', email: 'admin@lms.com', password: 'admin123', role: 'admin', instituteId: '1', className: '', isApproved: true },
+  { id: '1', name: 'Super Admin', email: 'admin@tinkedge.com', password: 'admin123', role: 'admin', instituteId: '1', className: '', isApproved: true },
   { id: '2', name: 'Dr. Sarah Wilson', email: 'sarah@school.com', password: 'password123', role: 'teacher', instituteId: '1', className: '10th A', isApproved: true },
   { id: '3', name: 'Alice Johnson', email: 'alice@student.com', password: 'password123', role: 'student', instituteId: '1', className: '10th A', isApproved: true, progressCount: 0 }
 ];
 
 const INITIAL_INSTITUTES: Institute[] = [
-  { id: '1', name: 'ThinkEdge Global Academy', address: 'Tech Park, Bangalore' }
+  { id: '1', name: 'TinkEdge Global Academy', address: 'Tech Park, Bangalore' }
 ];
 
 const INITIAL_CLASSES: Class[] = [
@@ -67,8 +67,10 @@ class Store {
     const targetClass = currentClasses.find(c => c.id === classId);
     if (!targetClass) return;
 
+    // Archive the old class data
     targetClass.isArchived = true;
     
+    // Promote students to the next class and reset their learning sequence progress
     const updatedUsers = this.users.map(u => {
         if (u.role === 'student' && u.className === targetClass.name) {
             return { ...u, className: nextClassName, progressCount: 0 };

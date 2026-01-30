@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { db } from './store';
-import { User } from './types';
+import { User } from './pages/types';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import AdminDashboard from './pages/AdminDashboard';

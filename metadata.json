@@ -1,6 +1,6 @@
 
 {
-  "name": "ThinkEdge LMS Enterprise",
+  "name": "TinkEdge LMS.V0",
   "description": "A comprehensive Learning Management System with Admin, Teacher, and Student modules featuring sequential content access, assessment tools, and academic year management.",
   "requestFramePermissions": [
     "camera",
