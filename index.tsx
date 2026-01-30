@@ -43,28 +43,40 @@ const App = () => {
 
   const role = user?.role as UserRole;
 
-  switch (role) {
-    case 'app-admin':
-    case 'admin':
-      return <SuperAdminDashboard user={user!} onLogout={logout} />;
-    case 'institute-admin':
-      return <AdminDashboard user={user!} onLogout={logout} />;
-    case 'teacher':
-      return <TeacherDashboard user={user!} onLogout={logout} />;
-    case 'student':
-      return <StudentDashboard user={user!} onLogout={logout} />;
-    default:
-      return (
-        <Login 
-          onLogin={(u: User) => { 
-            setUser(u); 
-            setView('app'); 
-          }} 
-          onNavigateRegister={() => setView('register')} 
-        />
-      );
-  }
+  // Render dashboard based on role
+  const renderDashboard = () => {
+    switch (role) {
+      case 'app-admin':
+      case 'admin':
+        return <SuperAdminDashboard user={user!} onLogout={logout} />;
+      case 'institute-admin':
+        return <AdminDashboard user={user!} onLogout={logout} />;
+      case 'teacher':
+        return <TeacherDashboard user={user!} onLogout={logout} />;
+      case 'student':
+        return <StudentDashboard user={user!} onLogout={logout} />;
+      default:
+        return (
+          <Login 
+            onLogin={(u: User) => { 
+              setUser(u); 
+              setView('app'); 
+            }} 
+            onNavigateRegister={() => setView('register')} 
+          />
+        );
+    }
+  };
+
+  return renderDashboard();
 };
 
-const root = createRoot(document.getElementById('root')!);
-root.render(<App />);
+const rootElement = document.getElementById('root');
+if (rootElement) {
+  const root = createRoot(rootElement);
+  root.render(
+    <React.StrictMode>
+      <App />
+    </React.StrictMode>
+  );
+}

@@ -53,5 +53,15 @@ export interface Assessment {
   id: string;
   title: string;
   type?: 'student' | 'teacher' | 'exam';
+  instituteId?: string;
   questions: any[];
+}
+
+export interface Notification {
+  id: string;
+  userId: string;
+  title: string;
+  message: string;
+  date: string;
+  isRead: boolean;
 }
