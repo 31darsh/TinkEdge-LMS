@@ -40,7 +40,16 @@ const App: React.FC = () => {
     if (path === 'register') return <Register onBack={() => window.location.hash = 'login'} />;
     if (path === 'assessment') return <AssessmentPortal />;
     
-    if (!currentUser) return <Login onLogin={(u) => { setCurrentUser(u); window.location.hash = u.role + '-dash'; }} />;
+    if (!currentUser) return <Login
+  onLogin={(u) => {
+    setCurrentUser(u);
+    window.location.hash = u.role + '-dash';
+  }}
+  onNavigateRegister={() => {
+    window.location.hash = 'register';
+  }}
+/>
+;
 
     switch (currentUser.role) {
       case 'admin': return <AdminDashboard user={currentUser} onLogout={() => { db.logout(); setCurrentUser(null); window.location.hash = 'login'; }} />;

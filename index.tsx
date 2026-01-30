@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { createRoot } from 'react-dom/client';
-import { User } from './pages/types';
+import { User, UserRole } from './pages/types';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import SuperAdminDashboard from './pages/SuperAdminDashboard';
@@ -8,7 +8,6 @@ import AdminDashboard from './pages/AdminDashboard';
 import TeacherDashboard from './pages/TeacherDashboard';
 import StudentDashboard from './pages/StudentDashboard';
 import AssessmentPortal from './pages/AssessmentPortal';
-
 
 const App = () => {
   const [user, setUser] = useState<User | null>(null);
@@ -41,15 +40,18 @@ const App = () => {
     setView('auth');
   };
 
-  switch (user?.role) {
+  const role = user?.role as UserRole;
+
+  switch (role) {
     case 'app-admin':
-      return <SuperAdminDashboard user={user} onLogout={logout} />;
+    case 'admin':
+      return <SuperAdminDashboard user={user!} onLogout={logout} />;
     case 'institute-admin':
-      return <AdminDashboard user={user} onLogout={logout} />;
+      return <AdminDashboard user={user!} onLogout={logout} />;
     case 'teacher':
-      return <TeacherDashboard user={user} onLogout={logout} />;
+      return <TeacherDashboard user={user!} onLogout={logout} />;
     case 'student':
-      return <StudentDashboard user={user} onLogout={logout} />;
+      return <StudentDashboard user={user!} onLogout={logout} />;
     default:
       return (
         <Login 

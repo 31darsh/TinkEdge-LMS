@@ -13,7 +13,10 @@ const Login = ({ onLogin, onNavigateRegister }: LoginProps) => {
       role, 
       name, 
       id: Math.random().toString(36).substr(2, 9), 
-      institute 
+      institute,
+      email: `${role}@demo.com`,
+      password: 'demo_password',
+      isApproved: true
     });
   };
 

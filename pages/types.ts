@@ -1,11 +1,41 @@
-export type UserRole = 'app-admin' | 'institute-admin' | 'teacher' | 'student' | null;
+export type UserRole = 'app-admin' | 'institute-admin' | 'teacher' | 'student' | 'admin' | null;
 
 export interface User {
-  role: UserRole;
-  name: string;
   id: string;
+  name: string;
+  email: string;
+  password: string;
+  role: UserRole;
   institute?: string;
+  instituteId?: string;
+  className?: string;
+  isApproved?: boolean;
+  progressCount?: number;
   marks?: number;
+}
+
+export interface Content {
+  id: string;
+  title: string;
+  type: 'video' | 'pdf' | 'quiz' | 'resource';
+  url: string;
+  priority?: number;
+  instituteId?: string;
+  className?: string;
+}
+
+export interface Class {
+  id: string;
+  name: string;
+  instituteId: string;
+  academicYear?: string;
+  isArchived?: boolean;
+}
+
+export interface Institute {
+  id: string;
+  name: string;
+  address?: string;
 }
 
 export interface InstituteRegistration {
@@ -22,5 +52,16 @@ export interface InstituteRegistration {
 export interface Assessment {
   id: string;
   title: string;
+  type?: 'student' | 'teacher' | 'exam';
+  instituteId?: string;
   questions: any[];
+}
+
+export interface Notification {
+  id: string;
+  userId: string;
+  title: string;
+  message: string;
+  date: string;
+  isRead: boolean;
 }
