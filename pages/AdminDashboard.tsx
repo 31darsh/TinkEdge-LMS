@@ -16,10 +16,10 @@ const AdminDashboard = ({ user, onLogout }: { user: any; onLogout: () => void })
   const classes = ['All Classes', 'Grade 10-A', 'Grade 10-B', 'Grade 9-A', 'Grade 8-C'];
 
   const users = [
-    { id: 1, name: 'Alice Cooper', role: 'Student', class: 'Grade 10-A', status: 'Active' },
-    { id: 2, name: 'Bob Marley', role: 'Teacher', class: 'N/A', status: 'Active' },
-    { id: 3, name: 'Charlie Puth', role: 'Student', class: 'Grade 9-A', status: 'Active' },
-    { id: 4, name: 'David Gandy', role: 'Student', class: 'Grade 10-B', status: 'Active' },
+    { id: 1, name: 'Ravikumar ', role: 'Student', class: 'Grade 10-A', status: 'Active' },
+    { id: 2, name: 'Abdul', role: 'Teacher', class: 'N/A', status: 'Active' },
+    { id: 3, name: 'Alex', role: 'Student', class: 'Grade 9-A', status: 'Active' },
+    { id: 4, name: 'David', role: 'Student', class: 'Grade 10-B', status: 'Active' },
   ];
 
   const filteredUsers = users.filter(u => 
@@ -34,11 +34,11 @@ const AdminDashboard = ({ user, onLogout }: { user: any; onLogout: () => void })
 
   const downloadTemplate = () => {
     // Simulated CSV download
-    const csvContent = "data:text/csv;charset=utf-8,Full Name,Email,Class,Gender,Parent Contact\nJohn Doe,john@example.com,Grade 10-A,Male,+123456789";
+    const csvContent = "data:text/csv;charset=utf-8,Full Name,Email,Class,Gender,Parent Contact\nJohn Doe,john@example.com,Grade 10-A,Male,+91 8834567890";
     const encodedUri = encodeURI(csvContent);
     const link = document.createElement("a");
     link.setAttribute("href", encodedUri);
-    link.setAttribute("download", "Lumen_Student_Template.csv");
+    link.setAttribute("download", "TinkEdge_Student_Template.csv");
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -51,7 +51,7 @@ const AdminDashboard = ({ user, onLogout }: { user: any; onLogout: () => void })
           <div className="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center shadow-lg">
             <GraduationCap className="text-white" size={24} />
           </div>
-          <span className="text-xl font-bold tracking-tight">Lumen Admin</span>
+          <span className="text-xl font-bold tracking-tight">TinkEdge Admin</span>
         </div>
 
         <nav className="flex-1 space-y-1">
@@ -85,7 +85,7 @@ const AdminDashboard = ({ user, onLogout }: { user: any; onLogout: () => void })
         <header className="flex justify-between items-center mb-8">
           <div>
             <h1 className="text-2xl font-bold text-slate-800 capitalize">{activeMenu.replace('-', ' ')}</h1>
-            <p className="text-slate-500 text-sm">Campus Dashboard: {user.institute || 'Global Excellence Academy'}</p>
+            <p className="text-slate-500 text-sm">Campus Dashboard: {user.institute || 'SJR PUBLIC SCHOOL'}</p>
           </div>
           <div className="flex items-center space-x-4">
             <button className="p-2 bg-white border rounded-xl text-slate-400 hover:text-slate-600 relative">

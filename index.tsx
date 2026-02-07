@@ -18,12 +18,12 @@ window.onerror = (message, source, lineno, colno, error) => {
   }
 };
 
-console.log("Lumen LMS: Initiating mount process...");
+console.log("TinkEdge LMS: Initiating mount process...");
 
 const rootElement = document.getElementById('root');
 
 if (!rootElement) {
-  console.error("Lumen LMS Fatal: Root element not found.");
+  console.error("TinkEdge LMS Fatal: Root element not found.");
 } else {
   try {
     const root = createRoot(rootElement);
@@ -32,9 +32,9 @@ if (!rootElement) {
         <App />
       </React.StrictMode>
     );
-    console.log("Lumen LMS: Application mounted successfully.");
+    console.log("TinkEdge LMS: Application mounted successfully.");
   } catch (err: any) {
-    console.error("Lumen LMS Mount Error:", err);
+    console.error("TinkEdge LMS Mount Error:", err);
     rootElement.innerHTML = `
       <div style="padding: 2rem; font-family: sans-serif; color: #7f1d1d; background: #fef2f2; border: 1px solid #fee2e2; border-radius: 1rem; margin: 2rem;">
         <h1 style="font-size: 1.25rem; font-weight: bold; margin-bottom: 1rem;">Runtime Failure</h1>

@@ -1,6 +1,7 @@
-
 {
-  "name": "TinkEdge LMS.V0",
+  "name": "TinkEdge LMS",
+  "version": "1.0.0",
+  "environment": "production",
   "description": "A comprehensive Learning Management System with Admin, Teacher, and Student modules featuring sequential content access, assessment tools, and academic year management.",
   "requestFramePermissions": [
     "camera",

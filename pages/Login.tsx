@@ -27,8 +27,8 @@ const Login = ({ onLogin, onNavigateRegister }: LoginProps) => {
           <div className="w-16 h-16 bg-blue-600 rounded-2xl flex items-center justify-center shadow-lg shadow-blue-200 mb-4">
             <GraduationCap className="text-white" size={32} />
           </div>
-          <h1 className="text-2xl font-bold text-slate-800">Lumen LMS</h1>
-          <p className="text-slate-500 text-sm font-medium">Enterprise Management Portal</p>
+          <h1 className="text-2xl font-bold text-slate-800">TinkEdge LMS</h1>
+          <p className="text-slate-500 text-sm font-medium">Learning Management Portal</p>
         </div>
 
         <div className="space-y-4 mb-6">
