@@ -68,10 +68,10 @@ const Login = ({ onLogin, onNavigateRegister }: LoginProps) => {
 
         <div className="grid grid-cols-2 gap-3 mb-3">
           <button onClick={() => handleDemoLogin('app-admin', 'System Master')} className="py-2.5 text-[10px] font-bold bg-indigo-950 text-white rounded-lg hover:bg-indigo-800 transition-all shadow-sm">App Admin (Master)</button>
-          <button onClick={() => handleDemoLogin('institute-admin', 'Jane Doe', 'St. Mary High')} className="py-2.5 text-[10px] font-bold bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-all shadow-sm">Institute Admin</button>
+          <button onClick={() => handleDemoLogin('institute-admin', 'Shreya', 'SJR PUBLIC School')} className="py-2.5 text-[10px] font-bold bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-all shadow-sm">Institute Admin</button>
         </div>
         <div className="grid grid-cols-2 gap-3 mb-8">
-          <button onClick={() => handleDemoLogin('teacher', 'Sarah Chen')} className="py-2.5 text-[10px] font-bold bg-slate-100 text-slate-600 rounded-lg hover:bg-slate-200 transition-all shadow-sm">Teacher</button>
+          <button onClick={() => handleDemoLogin('teacher', 'Rampasad')} className="py-2.5 text-[10px] font-bold bg-slate-100 text-slate-600 rounded-lg hover:bg-slate-200 transition-all shadow-sm">Teacher</button>
           <button onClick={() => handleDemoLogin('student', 'Alex Johnson')} className="py-2.5 text-[10px] font-bold bg-slate-100 text-slate-600 rounded-lg hover:bg-slate-200 transition-all shadow-sm">Student</button>
         </div>
 
